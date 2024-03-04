@@ -7,6 +7,185 @@ interface LoginResponse {
 	status: number;
 }
 
+const ContainerSecond = styled.div`
+	margin-top: 80px;
+	.LoginPage {
+		margin: 0 auto;
+		display: flex;
+		text-align: center;
+		width: 500px;
+		height: 570px;
+		background: linear-gradient(85deg, rgb(0, 0, 0), #041c63, #c3c634, #e6e3e3);
+		background-size: 400% 400%;
+		animation: gradientAnimation 5s infinite;
+		flex-direction: column;
+		background-color: #f8f9fa;
+	}
+	@keyframes gradientAnimation {
+		0% {
+			background-position: 0% 50%;
+		}
+		25% {
+			background-position: 25% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+		75% {
+			background-position: 100% 50%;
+		}
+		100% {
+			background-position: 0% 50%;
+		}
+	}
+	.image {
+		margin-left: 830px;
+		height: 43px;
+		margin-bottom: 30px;
+	}
+	input {
+		margin-top: 20px;
+
+		font-size: 14px;
+		background-color: #fafbfc;
+		border: 2px solid #dfe1e6;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		border-radius: 3px;
+		height: 40px;
+		width: 320px;
+	}
+	.prodoljit {
+		margin-top: 20px;
+		font-size: 16px;
+		background-color: #5aac44;
+		color: white;
+		border: 2px solid #dfe1e6;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		border-radius: 3px;
+		height: 40px;
+		width: 320px;
+	}
+	p {
+		font-size: 22px;
+	}
+	.google {
+		width: 18px;
+		height: 18px;
+	}
+	button {
+		height: 40px;
+		width: 320px;
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 14px;
+		font-family: inherit;
+		font-weight: bold;
+		color: #505f79;
+		height: 32px;
+		line-height: 32px;
+		margin-top: 10px;
+	}
+	.tri {
+		display: flex;
+		margin-left: 100px;
+	}
+	li {
+		margin-left: 12px;
+		margin-right: 2px;
+	}
+	a {
+		list-style: none;
+		text-decoration: none;
+	}
+	.chetyre {
+		padding-top: 20px;
+		display: flex;
+		justify-content: center;
+	}
+`;
+
+const Conteiner = styled.div`
+	.sun {
+		position: absolute;
+		animation: rotate 4s linear infinite;
+		--color: yellow;
+		--scale: 0.4;
+	}
+
+	.center {
+		height: calc(var(--scale) * 10em);
+		width: calc(var(--scale) * 10em);
+		background-color: var(--color);
+		border-radius: 50%;
+		box-shadow: 0 0 calc(var(--scale) * 3em) var(--color);
+	}
+
+	.ray {
+		position: absolute;
+		height: calc(var(--scale) * 3em);
+		width: calc(var(--scale) * 0.5em);
+		box-shadow: 0 0 calc(var(--scale) * 1em) var(--color);
+		background-color: var(--color);
+	}
+
+	.r-1 {
+		margin-left: calc(var(--scale) * 4.75em);
+		margin-top: calc(var(--scale) * 1em);
+	}
+
+	.r-2 {
+		margin-left: calc(var(--scale) * 12.25em);
+		margin-top: calc(var(--scale) * -6.25em);
+		transform: rotate(90deg);
+	}
+
+	.r-3 {
+		margin-left: calc(var(--scale) * 4.75em);
+		margin-top: calc(var(--scale) * -14em);
+	}
+
+	.r-4 {
+		margin-left: calc(var(--scale) * -2.75em);
+		margin-top: calc(var(--scale) * -6.25em);
+		transform: rotate(90deg);
+	}
+
+	.r-5 {
+		margin-left: calc(var(--scale) * -0.5em);
+		margin-top: calc(var(--scale) * -1em);
+		transform: rotate(45deg);
+	}
+
+	.r-6 {
+		margin-left: calc(var(--scale) * 9.75em);
+		margin-top: calc(var(--scale) * -1em);
+		transform: rotate(-45deg);
+	}
+
+	.r-7 {
+		margin-left: calc(var(--scale) * 10.25em);
+		margin-top: calc(var(--scale) * -11.75em);
+		transform: rotate(45deg);
+	}
+
+	.r-8 {
+		margin-left: calc(var(--scale) * -0.5em);
+		margin-top: calc(var(--scale) * -11.75em);
+		transform: rotate(-45deg);
+	}
+
+	@keyframes rotate {
+		0% {
+			transform: rotate(0deg);
+		}
+
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+`;
 const Login: React.FC = () => {
 	const navigate = useNavigate();
 	const [email, setEmail] = useState("");
@@ -42,193 +221,6 @@ const Login: React.FC = () => {
 			console.error("Error during authentication:", error);
 		}
 	};
-
-	const ContainerSecond = styled.div`
-		margin-top: 80px;
-		.LoginPage {
-			margin: 0 auto;
-			display: flex;
-			text-align: center;
-			width: 500px;
-			height: 570px;
-			background: linear-gradient(
-				85deg,
-				rgb(0, 0, 0),
-				#041c63,
-				#c3c634,
-				#e6e3e3
-			);
-			background-size: 400% 400%;
-			animation: gradientAnimation 5s infinite;
-			flex-direction: column;
-			background-color: #f8f9fa;
-		}
-		@keyframes gradientAnimation {
-			0% {
-				background-position: 0% 50%;
-			}
-			25% {
-				background-position: 25% 50%;
-			}
-			50% {
-				background-position: 100% 50%;
-			}
-			75% {
-				background-position: 100% 50%;
-			}
-			100% {
-				background-position: 0% 50%;
-			}
-		}
-		.image {
-			margin-left: 830px;
-			height: 43px;
-			margin-bottom: 30px;
-		}
-		input {
-			margin-top: 20px;
-
-			font-size: 14px;
-			background-color: #fafbfc;
-			border: 2px solid #dfe1e6;
-			-moz-box-sizing: border-box;
-			box-sizing: border-box;
-			border-radius: 3px;
-			height: 40px;
-			width: 320px;
-		}
-		.prodoljit {
-			margin-top: 20px;
-			font-size: 16px;
-			background-color: #5aac44;
-			color: white;
-			border: 2px solid #dfe1e6;
-			-moz-box-sizing: border-box;
-			box-sizing: border-box;
-			border-radius: 3px;
-			height: 40px;
-			width: 320px;
-		}
-		p {
-			font-size: 22px;
-		}
-		.google {
-			width: 18px;
-			height: 18px;
-		}
-		button {
-			height: 40px;
-			width: 320px;
-			display: inline-block;
-			vertical-align: middle;
-			font-size: 14px;
-			font-family: inherit;
-			font-weight: bold;
-			color: #505f79;
-			height: 32px;
-			line-height: 32px;
-			margin-top: 10px;
-		}
-		.tri {
-			display: flex;
-			margin-left: 100px;
-		}
-		li {
-			margin-left: 12px;
-			margin-right: 2px;
-		}
-		a {
-			list-style: none;
-			text-decoration: none;
-		}
-		.chetyre {
-			padding-top: 20px;
-			display: flex;
-			justify-content: center;
-		}
-	`;
-
-	const Conteiner = styled.div`
-		.sun {
-			position: absolute;
-			animation: rotate 4s linear infinite;
-			--color: yellow;
-			--scale: 0.4;
-		}
-
-		.center {
-			height: calc(var(--scale) * 10em);
-			width: calc(var(--scale) * 10em);
-			background-color: var(--color);
-			border-radius: 50%;
-			box-shadow: 0 0 calc(var(--scale) * 3em) var(--color);
-		}
-
-		.ray {
-			position: absolute;
-			height: calc(var(--scale) * 3em);
-			width: calc(var(--scale) * 0.5em);
-			box-shadow: 0 0 calc(var(--scale) * 1em) var(--color);
-			background-color: var(--color);
-		}
-
-		.r-1 {
-			margin-left: calc(var(--scale) * 4.75em);
-			margin-top: calc(var(--scale) * 1em);
-		}
-
-		.r-2 {
-			margin-left: calc(var(--scale) * 12.25em);
-			margin-top: calc(var(--scale) * -6.25em);
-			transform: rotate(90deg);
-		}
-
-		.r-3 {
-			margin-left: calc(var(--scale) * 4.75em);
-			margin-top: calc(var(--scale) * -14em);
-		}
-
-		.r-4 {
-			margin-left: calc(var(--scale) * -2.75em);
-			margin-top: calc(var(--scale) * -6.25em);
-			transform: rotate(90deg);
-		}
-
-		.r-5 {
-			margin-left: calc(var(--scale) * -0.5em);
-			margin-top: calc(var(--scale) * -1em);
-			transform: rotate(45deg);
-		}
-
-		.r-6 {
-			margin-left: calc(var(--scale) * 9.75em);
-			margin-top: calc(var(--scale) * -1em);
-			transform: rotate(-45deg);
-		}
-
-		.r-7 {
-			margin-left: calc(var(--scale) * 10.25em);
-			margin-top: calc(var(--scale) * -11.75em);
-			transform: rotate(45deg);
-		}
-
-		.r-8 {
-			margin-left: calc(var(--scale) * -0.5em);
-			margin-top: calc(var(--scale) * -11.75em);
-			transform: rotate(-45deg);
-		}
-
-		@keyframes rotate {
-			0% {
-				transform: rotate(0deg);
-			}
-
-			100% {
-				transform: rotate(360deg);
-			}
-		}
-	`;
-
 	return (
 		<>
 			<Conteiner>
